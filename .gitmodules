@@ -1,0 +1,6 @@
+[submodule "themes/Cxo"]
+    path = themes/Cxo
+    url = https://github.com/SUMINGQIU/Cxo.git
+[submodule "themes/hiker"]
+    path = themes/hiker
+    url = https://github.com/SUMINGQIU/hiker.git
