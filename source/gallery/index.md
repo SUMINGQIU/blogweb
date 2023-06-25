@@ -25,8 +25,15 @@ comments: false
 ![Red Sangke Grassland in Gansu](https://sumingqiu.files.wordpress.com/2021/11/e6a191e7a791-1.jpg?w=1024)
 
 
-Here are some photos I take all over the world:
-![test](https://i0.hdslb.com/bfs/new_dyn/938eb79c2a1f816b83af6490e4584f2222750868.jpg)
+<p style="font-size: 19px;">Here are some photos I take all over the world:</p>
+
+
+|  |  |
+|-------|-------|
+| ![Alaska's Aurora](https://github.com/SUMINGQIU/blogweb/blob/master/source/images/aurora.jpg?raw=true&w=1024) | ![Horseshoe Bend](https://github.com/SUMINGQIU/blogweb/blob/master/source/images/horseshow.jpg?raw=true&w=1024) |
+| ![Rome's Dawn](https://github.com/SUMINGQIU/blogweb/blob/master/source/images/rome.jpg?raw=true) | ![Mexio Beach](https://github.com/SUMINGQIU/blogweb/blob/master/source/images/Hawayi.jpg?raw=true) |
+
+
 
 <p style="font-size: 19px;">I like to taking vlogs to record my life. Here are some of the videos I took before. Hope you enjoy them.</p>
 
