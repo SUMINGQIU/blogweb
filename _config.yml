@@ -29,7 +29,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-
+  - research/slideofres1/sltest.html
+  - 404/404.html
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -40,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -102,4 +103,6 @@ theme: hiker
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: git@github.com:SUMINGQIU/SUMINGQIU.github.io.git
+  branch: master

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+    />
+    <style>
+
+      .f-carousel {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .f-carousel__slide {
+        justify-content: center;
+        align-items: center;
+      }
+      .f-carousel__slide img {
+        max-width: 100%; /* 图片宽度最大为容器宽度 */
+        height: auto; /* 图片高度自动调整 */
+      }
+      .test1 {
+        font-size: 24px;
+        color: black;
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      @media screen and (max-width: 640px) {
+        #myCarousel3 .f-carousel__slide {
+          flex-direction: column;
+        }
+        #myCarousel4 .f-carousel__slide {
+          flex-direction: column;
+        }
+      }
+      #myCarousel3, #myCarousel4, #myCarousel5, #myCarousel6, #myCarousel7 {
+        max-width: none;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      #myCarousel3 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #myCarousel4 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #myCarousel5 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #myCarousel6 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #myCarousel7 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #containerparal {
+        display: flex;
+      }
+      
+      #containerparal0 {
+        width: 100%;
+        display: flex;
+      }
+      #containerparal2 {
+        width: 100%;
+        display: flex;
+      }
+      #containerparal3 {
+        display: flex;
+      }
+      #text1, #text2, #text3, #text4 {
+        flex: 1;
+      }
+      .f-carousel0 {
+        display: flex; /* 使用 flex 布局使图片并排显示 */
+        max-width: 640px;
+        margin: 0 auto; 
+      }
+      .f-carousel {
+        --f-button-width: 38px;
+        --f-button-height: 38px;
+
+        --f-button-svg-width: 16px;
+        --f-button-svg-height: 16px;
+        --f-button-svg-stroke-width: 2.5;
+
+        --f-button-color: rgb(71 85 105);
+        --f-button-border-radius: 50%;
+        --f-button-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0
+                0 / 30%);
+
+        --f-button-bg: #fff;
+        --f-button-hover-bg: #f9f9f9;
+        --f-button-active-bg: #f0f0f0;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!-- *************************** research 1 *********************** -->
+    <h2 class="test1"><strong>AI-Enabled Tactical Route Planning</strong> <em>--- Student Researcher</em></h2>
+    <div>
+      <div class="f-carousel" id="myCarousel">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/cty.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/seg.jpg?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/rrt.png?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/rrt_fig2-1.jpg"
+          />
+        </div>
+
+        
+      </div>
+    </div>
+    <ul style="font-size: 19px;">
+      To simulate the real-world drone tracking and path planning process, 
+      I use air-sim together with Unreal Engine to simulate the car tracking process. 
+      Firstly, we built a true-to-real-world environment in Unreal Engine (UE4), as shown in the first picture, 
+      which reduced the cost to do the real physical experiments. Then I implement a deep-learning-based depth-map 
+      algorithm (Monodepth2) and segmentation algorithm(Detectron2) in the virtual environment. These two methods will 
+      generate the 3D occlusion identification and map it into the Unreal Engine virtual environment. Furthermore, 
+      we used RRT algorithms for the 2d path planning (Fig 2). We set the starting point (X) and a target point (O). 
+      The red line is the optimal path and the green line is all possible paths (Fig 3). After getting the optimal path 
+      from above, we change the path into spline in UE4. The planned path in Fig 3 is executed by the virtual agent in 
+      Fig 4. In the last step, we designed a spline-based autonomous moving method for agents using a blueprint 
+      that also could record real-time position data in TXT format. The recorded position data will be used for 
+      the drone to track. This technology can be used for future autonomous driving as drones can assist the car in 
+      driving and path planning.
+    </ul>
+<br>
+<br>
+<br>
+<br>
+    <!-- *************************** research 2 *********************** -->
+
+    <h2 class="test1"><strong>Human-Robot Collaboration System (LMCO project) for Target Tracking</strong> <em>--- Team Lead</em></h2>
+    <div>
+      <div class="f-carousel" id="myCarousel2">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab8.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab6-1.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab3.jpg?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab5.png?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab2.jpg"
+          />
+        </div>
+
+        
+      </div>
+    </div>
+    <ul style="font-size: 19px;">
+      First of all, I use YOLO for target detection (Fig 1). The target data will be stored in the database first. 
+      I predefined multiple positions of virtual human targets as shown in Fig 2. I also put several fixed-camera 
+      in the environment which provides views for human operators. When drones find the target, they will track the 
+      target (Fig 3 – 4) using a Neural Network based trajectory prediction algorithm. When drones lost targets due 
+      to bad weather or obstacles (Fig 5), the drone can receive messages from the human operator (Fig 6) through the 
+      fixed-camera windows, which assists the path planning for the drone. Drones will update the path based on the 
+      click position. I also designed a fog system in the environment which means we can simulate the drone’s tracking 
+      ability in different densities of fog.
+    </ul>
+    <!-- *************************** research 3 *********************** -->
+    <h2 class="test1"><strong>Research on Volumetric Contact Theory to Electrical Contact between Random Rough Surfaces</strong> <em>--- Team Lead</em></h2>
+    <div>
+      <div class="f-carousel" id="myCarousel5">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e7ae97e6b395e7949fe68890e79a84e69588e69e9ce59bbe2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume4.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume3.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e9939ce689abe68f8f.png"
+          />
+        </div>
+
+        
+      </div>
+    </div>
+    <ul style="font-size: 19px;">
+      The core problem of metal contact was to calculate the contact area accurately. 
+        Traditionally, researchers tend to use fractal theories, while the applications are limited in 
+        some cases. Inspired by holes in sponges, I used the concept of porosity to develop a universal methodology. 
+        The big picture was to divide the volume of the metal by the height of the refactored surface.  
+        With the reconstructed surface, I wrote a program to iterate the height of the cylinder mentioned above recursively. 
+        Consequently, the real contact area can be calculated. Luckily, my supervisor, Professor Wurui Ta, got contact with Dr. 
+        BNJ Persson – who raised Persson’s contact theory, which becomes one of the most important theories in contact mechanics – to evaluate 
+        the model I developed. Combining with Persson’s method, we also propose a new resistance calculating method which could be used to 
+        determine superconducting cables’ resistance quicker and cheaper. The simulation results show better accuracy and speed than any existing 
+        method. This research was published in Tribology International
+    </ul>
+    <!-- *************************** research 4&5 *********************** -->
+
+    <div id = "containerparal0">
+      
+      <div class="f-carousel0" id="myCarousel3">
+        
+        <div
+          class="f-carousel__slide"
+          style="width: 300px;"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/sand_fig2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/sand_fig.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/1.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/2.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/4a.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/4c.png"
+          />
+        </div>
+
+        
+      </div>
+      
+
+      <div class="f-carousel0" id="myCarousel7">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/796466719632579496.jpg?w=1024"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          style="width: 300px;"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/cancer.png"
+          />
+        </div>
+        
+        
+      </div>
+    </div>
+
+    <div id="containerparal"> 
+      <p style="font-size: 19px;" id="text1">
+        <br>
+        <strong style="font-size: 24px;color: black;font-family:Arial, Helvetica, sans-serif;">Numerical Calculations of Ellipsoid Sand's Movement Considering Magnus Force <em >--- Team Lead</em></strong> 
+        <br>
+        <br>
+        The core problem of metal contact was to calculate the contact area accurately. 
+        Traditionally, researchers tend to use fractal theories, while the applications are limited in 
+        some cases. Inspired by holes in sponges, I used the concept of porosity to develop a universal methodology. 
+        The big picture was to divide the volume of the metal by the height of the refactored surface.  
+        With the reconstructed surface, I wrote a program to iterate the height of the cylinder mentioned above recursively. 
+        Consequently, the real contact area can be calculated. Luckily, my supervisor, Professor Wurui Ta, got contact with Dr. 
+        BNJ Persson – who raised Persson’s contact theory, which becomes one of the most important theories in contact mechanics – to evaluate 
+        the model I developed. Combining with Persson’s method, we also propose a new resistance calculating method which could be used to 
+        determine superconducting cables’ resistance quicker and cheaper. The simulation results show better accuracy and speed than any existing 
+        method. This research was published in Tribology International
+      </p>
+
+      
+      <ul style="font-size: 19px;" id="text4">
+        <br>
+        <strong style="font-size: 24px;color: black;font-family:Arial, Helvetica, sans-serif;">Immune Cell’s Mechanical Properties Based on AFM <em >--- Team Lead</em></strong> 
+        <br>
+        <br>
+        Cancer has been bothering humans for a long time. To find cancer symptoms as early as possible is very important. 
+        The current methods can not identify early-stage cancer effectively. As a consequence, my group tries to identify 
+        early-stage cancer from a mechanical perspective. Immune cells and cancer cells have different mechanical properties, 
+        using AFM we can tell the difference between these cells. If we are given a potential cancer patient, we can measure 
+        the cells in his blood to find if there are any cancer cells. In the future, we can even make a portable device that 
+        can measure the cell status in time. If the device finds potential cancer cells, then the patient can go to the hospital 
+        for further examination.
+      </ul>
+    </div>
+
+
+    <!-- *************************** research 6&7 *********************** -->
+
+    <div id = "containerparal3">
+  
+      <div class="f-carousel0" id="myCarousel6">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/14.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/16.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/19.gif"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/22.png"
+          />
+        </div>
+        
+
+        
+      </div>
+      
+      <div class="f-carousel0" id="myCarousel4">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/octopuc1.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/octopuc2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e5bcafe69bb2e6b8b2e69f93.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/lilna2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/lilan.png"
+          />
+        </div>
+        
+      </div>
+
+
+    </div>
+
+    <div id="containerparal2">
+
+      <ul style="font-size: 19px;" id="text3">
+        <br>
+        <strong style="font-size: 24px;color: black;font-family:Arial, Helvetica, sans-serif;">Research on Aquatic Unmanned Aerial Vehicles <em >--- Team Lead</em></strong> 
+        <br>
+        <br>
+        After reading more than 200 scientific articles, I analyzed the former designs on aquatic unmanned aerial 
+        vehicles and raised a feasible conceptual proposal based on fish imitation which doesn't dive into the water. 
+        This new design can be operated underwater more effectively underwater because of the suitable shape for underwater running.
+      </ul>
+      <p style="font-size: 19px;" id="text2">
+        <br>
+        <strong style="font-size: 24px;color: black;font-family:Arial, Helvetica, sans-serif;">Mechanical Simulation of Flexible Optics Devices <em >--- Team Lead</em></strong> 
+        <br>
+        <br>
+        I am proficient in operating finite-element analysis software, such as COMSOL, ABAQUS, ANSYS, etc. 2020’s summer, 
+        I have conducted post-buckling analysis for three-layer structure (PI, Silicone, and SU8) at Westlake University, 
+        and attempted to measure cell elastic modulus by optical methods and got the deformation of cells indirectly through 
+        the changes of optical properties of elastic substrates. (The above pictures are the post-buckling analyses of octopus 
+        structure) Further, I verified the experimental data by means of finite element analysis software ABAQUS and COMSOL to 
+        prove their reliability, even though the former one has better operation speed and convergence.
+      </p>
+      
+
+    </div>
+<!-- *************************** Style *********************** -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+    <script>
+      const container = document.getElementById("myCarousel");
+      const options = { Dots: true };
+
+      new Carousel(container, options, { Thumbs });
+
+      const container2 = document.getElementById("myCarousel2");
+      const options2 = { Dots: true };
+
+      new Carousel(container2, options2, { Thumbs });
+
+      const container3 = document.getElementById("myCarousel3");
+      const options3 = { Dots: true };
+
+      new Carousel(container3, options3, { Thumbs });
+
+      const container4 = document.getElementById("myCarousel4");
+      const options4 = { Dots: true };
+
+      new Carousel(container4, options4, { Thumbs });
+
+      const container5 = document.getElementById("myCarousel5");
+      const options5 = { Dots: true };
+
+      new Carousel(container5, options5, { Thumbs });
+
+      const container6 = document.getElementById("myCarousel6");
+      const options6 = { Dots: true };
+
+      new Carousel(container6, options6, { Thumbs });
+
+      const container7 = document.getElementById("myCarousel7");
+      const options7 = { Dots: true };
+
+      new Carousel(container7, options7, { Thumbs });
+    </script>
+  </body>
+</html>

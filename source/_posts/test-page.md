@@ -16,3 +16,9 @@ Hi! Nice to meet you. I am currently working as a Software Engineer at Amazon Ro
 <li style="font-size: 17px;">
 My past research interests cover friction, FEA, and mechanical designs. Now I am working on human-robot collaboration in virtual environment. I am very passionate about interdisciplinary things empowered by physics, computer science, and math. Combining these together and making more productive things attract me a lot. In many of my projects, you can see how I combine different knowledge together. In the future, I wish to explore interesting interdisciplinary in greater depth.
 </li>
+
+<p>
+    <!-- <div style="width:100%; height:550px;border:none;text-align:center">
+        <iframe allowtransparency="yes" frameborder="0" width="600" height="600" src="slideofres1/sltest.html">
+    </div> -->
+</p>

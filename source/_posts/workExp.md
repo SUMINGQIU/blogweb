@@ -28,6 +28,9 @@ escape_code: false
         <li>Realized interaction of virtual drones and ground robots with physical targets, which is the basis for virtual interaction with the real world.</li>
         <li>Submitted two research papers for review.</li>
     </ul>
+    <!-- <div style="width:100%; height:550px;border:none;text-align:center">
+        <iframe allowtransparency="yes" frameborder="0" width="600" height="600" src="slideofres1/sltest.html">
+    </div> -->
 </p>
 
 <hr>
